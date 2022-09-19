@@ -48,7 +48,7 @@ def import_data():
         print({"username":user_name, "password":fake_password})
 
 def import_car_data():
-    url = "https://index.getaround.com/v1.0/search?product=web&properties=car_id,car_name,car_photo_v2,category,class,distance,postcode,latitude,longitude,market_abbreviation,timezone,year,make,model,dedicated_parking,subtotal_price,stars_rating,rating_count,is_new&sort=best&page_sort=magic&page_size=500&start_time=2022-09-18T07:00:00.000Z&end_time=2022-09-18T15:00:00.000Z&viewport=40.69232077770093,-74.13780873750001,40.73291750629227,-73.87413686250001&zoom=12&use=CARSHARE"
+    url = "https://index.getaround.com/v1.0/search?product=web&properties=car_id,car_name,car_photo_v2,category,class,distance,postcode,latitude,longitude,market_abbreviation,timezone,year,make,model,dedicated_parking,subtotal_price,stars_rating,rating_count,is_new&sort=best&page_sort=magic&page_size=500&user_lat=40.7127753&user_lng=-74.0059728&start_time=2022-09-20T02:15:00.000Z&end_time=2022-09-20T10:15:00.000Z&viewport=40.651722266584784,-74.13145726655274,40.77377240189665,-73.88048833344727&zoom=12&use=CARSHARE"
     response = json.loads(requests.get(url).content)
 
     for car in response['cars']:
