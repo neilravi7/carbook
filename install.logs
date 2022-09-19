@@ -1,0 +1,4 @@
+Installing collected packages: wcwidth, pure-eval, ptyprocess, pickleshare, executing, backcall, traitlets, pygments, prompt-toolkit, pexpect, parso, decorator, asttokens, stack-data, matplotlib-inline, jedi, ipython
+Successfully installed asttokens-2.0.8 backcall-0.2.0 decorator-5.1.1 executing-1.0.0 ipython-8.5.0 jedi-0.18.1 matplotlib-inline-0.1.6 parso-0.8.3 pexpect-4.8.0 pickleshare-0.7.5 prompt-toolkit-3.0.31 ptyprocess-0.7.0 pure-eval-0.2.2 pygments-2.13.0 stack-data-0.5.0 traitlets-5.4.0 wcwidth-0.2.5
+
+pyjwt, djangorestframework-simplejwt
