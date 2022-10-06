@@ -7,7 +7,13 @@ class BookingAdminSerializerAdmin(serializers.ModelSerializer):
         fields = '__all__'
 
 
-class BookingSerializerUser(serializers.ModelSerializer):
+class BookingSerializer(serializers.ModelSerializer):
     class Meta:
         model = models.Booking
-        fields = ['vehicle', 'duration_start', 'duration_end']
+        fields = ['user', 'vehicle', 'pick_up_address', 'origin_city', 'duration_start', 'duration_end', 'total_amount']
+
+
+# class BookingCreateSerializer(serializers.ModelSerializer):
+#     class Meta:
+#         model = models.Booking
+#         fields = ['vehicle', 'duration_start', 'duration_end', 'total_amount']
