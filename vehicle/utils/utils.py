@@ -45,17 +45,23 @@ def import_data(url_string):
 
 def import_car_data(url_string):
     url = url_string
-    response = json.loads(requests.get(url).content)
 
-    for car in response['cars']:
+    response = json.loads(requests.get(url).content)
+    
+    for car in response['data']['carModels']:
         car_obj = Vehicle.objects.create(
-            car_name=car['car_name'],
-            transmission='MANUAL',
-            vehicle_class=car['class'],
-            vehicle_type=car['category'],
-            sub_total_price=car['subtotal_price'],
-            rating_count=car['rating_count'],
-            star_rating=car['stars_rating'],
+            car_name=car['model'],
+            transmission=car['transmission'],
+            car_seats = car["carSeats"],
+            fuel_type = car['fuelType'],
+            engine_power=car['enginePower'],
+            price_per_hour=car["pricePerHour"],
+            price_per_day=car["pricePerDay"],
+            price_per_week=car["pricePerWeek"],
+            vehicle_type=car['segmentType'],
+            sub_total_price=car['pricePerHour'],
+            rating_count=car['plpRank'],
+            star_rating=car['plpRank'],
             features=[
                 "All-wheel drive", 
                 "Automatic Transmission", 
@@ -68,8 +74,10 @@ def import_car_data(url_string):
                 "AUX/MP3 enabled",
                 "Tinted windows",
             ],
-            manufactured_by=car['make'],
-            manufactured_year=car['year'],
-            car_photo=car['car_photo_v2']
+            manufactured_by=car['producer'],
+            manufactured_year="2019",
+            car_thumb_image=car['thumbImage'],
+            car_white_image=car['whiteImage'],
+            car_photo=car['carImages'][0]
         )
         print(car_obj.car_name, 'Inserted')
